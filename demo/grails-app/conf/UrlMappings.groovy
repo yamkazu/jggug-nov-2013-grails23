@@ -7,6 +7,8 @@ class UrlMappings {
             }
         }
 
+        "/statuses"(resources: "tweet", excludes: ["create", "edit", "update"])
+
         "/"(view:"/index")
         "500"(view:'/error')
 	}
