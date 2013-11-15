@@ -113,3 +113,10 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+remoteControl.enabled = true
+environments {
+    production {
+        remoteControl.enabled = false
+    }
+}

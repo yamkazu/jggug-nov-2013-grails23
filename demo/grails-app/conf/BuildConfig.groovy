@@ -12,9 +12,11 @@ grails.project.fork = [
     //  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
 
     // configure settings for the test-app JVM, uses the daemon by default
-    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
+//    test: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, daemon:true],
+    test: false,
     // configure settings for the run-app JVM
-    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+//    run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
+    run: false,
     // configure settings for the run-war JVM
     war: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256, forkReserve:false],
     // configure settings for the Console UI JVM
@@ -49,6 +51,15 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
+
+        def gebVersion = "0.9.2"
+        def seleniumVersion = "2.32.0"
+
+        test("org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion")
+        test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
+
+        // You usually only need one of these, but this project uses both
+        test "org.gebish:geb-spock:$gebVersion"
     }
 
     plugins {
@@ -68,5 +79,10 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
+
+        compile ":remote-control:1.4"
+        test ":geb:0.9.2"
+        test ":rest-client-builder:2.0.0"
+
     }
 }
