@@ -510,7 +510,7 @@ REST APIをテストするにはユニットを使う方法もありますが、
 Spockと連携して使うのは決まり。
 RESTクライアントは何を使うか？
 
-* GORM Rest Client Plugin
+* REST Client Builder Plugin
 * Grails REST Plugin
 * Async Http Client
 
