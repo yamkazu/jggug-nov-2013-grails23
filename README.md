@@ -547,7 +547,7 @@ RESTクライアントは何を使うか？
 
 ## まとめ
 
-* だしぽんAPIなら`@Resource`ですぐ作るれる
+* だしぽんAPIなら`@Resource`ですぐ作れる
 * ロジックが必要ならコントローラを作る
     * スキャフォルド
     * RestfulController
